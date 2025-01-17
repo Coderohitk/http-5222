@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    //- Home | Test website
+    title #{title} | Shop For Clothes
+    link(rel="stylesheet", href="/styles.css")
+  body
+    header#header
+      .top-center
+        a(href="/") Shop For Clothes
+      nav
+        ul
+          li
+            a(href="/") Home
+          li
+            a(href="/about") About
+    main#main
+      block layout-content
+    include footer.pug
