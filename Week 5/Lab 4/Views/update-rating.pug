@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Update Movie Rating
+    link(rel="stylesheet", href="/style.css")
+  body
+    .container
+      h1 Update Movie Rating
+      form(action="/update-rating", method="POST")
+        .form-group
+          label(for="title") Select Movie Title
+          input#title(type="text" name="title" required placeholder="Enter movie title")
+        .form-group
+          label(for="rating") New Rating
+          select(id="rating", name="rating")
+            option(value="G") G
+            option(value="PG") PG
+            option(value="PG-13") PG-13
+            option(value="R") R
+        .form-group
+          button.btn.btn-submit(type="submit") Update Rating
+      a.btn.btn-back(href="/") Back to Movie List

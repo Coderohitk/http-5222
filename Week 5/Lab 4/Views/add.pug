@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Add New Movie
+    link(rel="stylesheet", href="/style.css")
+  body
+    .container
+      h1 Add New Movie
+      form(action="/add", method="POST")
+        .form-group
+          label(for="title") Title
+          input#title(type="text" name="title" required placeholder="Enter movie title")
+        .form-group
+          label(for="year") Year
+          input#year(type="number" name="year" required placeholder="Enter movie release year")
+        .form-group
+          label(for="rating") Rating
+          input#rating(type="text" name="rating" required placeholder="Enter movie rating")
+        .form-group
+          button.btn.btn-submit(type="submit") Add Movie
+      a.btn.btn-back(href="/") Back to Movie List

@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Delete Movies by Rating
+    link(rel="stylesheet", href="/style.css")
+  body
+    .container
+      h1 Delete Movies by Rating
+      form(action="/delete-by-rating", method="POST", onsubmit="return confirm('Are you sure? This will delete ALL movies with this rating!');")
+        .form-group
+          label(for="rating") Select Rating to Delete
+          select(id="rating", name="rating")
+            option(value="G") G
+            option(value="PG") PG
+            option(value="PG-13") PG-13
+            option(value="R") R
+        .form-group
+          button.btn.btn-delete(type="submit") Delete Movies
+      a.btn.btn-back(href="/") Back to Movie List
