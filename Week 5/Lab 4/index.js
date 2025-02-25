@@ -6,7 +6,7 @@ dotenv.config();
 const db = require("./models/movies");
 
 const app = express();
-const port = process.env.PORT || "5000";
+const port = process.env.PORT || "8888";
 
 // Middleware
 app.use(express.static(path.join(__dirname, "public")));

@@ -1,0 +1,15 @@
+extends layout 
+
+block main-content 
+  h1.page-title Most Anticipated TV Shows
+
+  table
+    thead
+      tr 
+        th Show Title
+        th Release Year
+    tbody
+      each show in anticipatedShows
+        tr
+          td: a(href=`https://imdb.com/title/${show.show.ids.imdb}`, target="_blank") #{show.show.title}
+          td #{show.show.year || 'N/A'}
