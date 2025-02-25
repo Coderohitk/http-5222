@@ -1,0 +1,25 @@
+extends ../common/layout
+
+block layout-content
+  .main-content
+    h1.page-title Update Skill
+
+    form(action=`/skill/update/${skill._id}`, method="POST")
+      .form-group
+        label(for="name") Skill Name:
+        input(type="text", name="name", id="name", value=skill.name, required)
+
+      .form-group
+        label(for="category") Category:
+        input(type="text", name="category", id="category", value=skill.category, required)
+
+      .form-group
+        label(for="proficiency") Proficiency:
+        select(name="proficiency", id="proficiency", required)
+          option(value="Beginner" selected=(skill.proficiency === "Beginner")) Beginner
+          option(value="Intermediate" selected=(skill.proficiency === "Intermediate")) Intermediate
+          option(value="Advanced" selected=(skill.proficiency === "Advanced")) Advanced
+
+      button(type="submit") Update Skill
+
+    a(href="/skill") Go back to skills list

@@ -1,0 +1,26 @@
+extends ../common/layout
+
+block layout-content
+  .main-content
+    h1.page-title Update Project
+
+    form(action=`/project/update/${project._id}`, method="POST")
+      .form-group
+        label(for="name") Project Name:
+        input(type="text", name="name", id="name", value=project.name, required)
+
+      .form-group
+        label(for="description") Description:
+        textarea(name="description", id="description", rows="4", required)= project.description
+
+      .form-group
+        label(for="technology") Technologies (comma separated):
+        input(type="text", name="technology", id="technology", value=project.technology ? project.technology.join(', ') : '', required)
+
+      .form-group
+        label(for="link") Project Link:
+        input(type="url", name="link", id="link", value=project.link, required)
+
+      button(type="submit") Update Project
+
+    a(href="/project") Go back to projects list

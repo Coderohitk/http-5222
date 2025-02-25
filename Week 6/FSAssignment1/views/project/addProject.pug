@@ -1,0 +1,26 @@
+extends ../common/layout
+
+block layout-content
+  .main-content
+    h1.page-title Add a New Project
+
+    form(action="/project/add/submit", method="POST")
+      .form-group
+        label(for="title") Project Title:
+        input(type="text", name="name", id="name", required)
+
+      .form-group
+        label(for="description") Description:
+        textarea(name="description", id="description", rows="4", required)
+
+      .form-group
+        label(for="technology") Technologies (comma separated):
+        input(type="text", name="technology", id="technology", required)
+
+      .form-group
+        label(for="link") Project Link:
+        input(type="url", name="link", id="link", required)
+
+      button(type="submit") Add Project
+
+    a(href="/project/list") Go back to projects list

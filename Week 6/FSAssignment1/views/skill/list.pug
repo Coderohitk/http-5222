@@ -1,0 +1,22 @@
+extends ../common/layout
+
+block layout-content
+  .main-content
+    h1.page-title My Skills
+    
+    // Add Skill Button
+    a.btn(href="/skill/add") Add Skill
+
+    each skill in skills
+      .skill-item
+        h2= skill.name
+        p 
+          strong Category: 
+          |  #{skill.category}
+        p 
+          strong Proficiency: 
+          |  #{skill.proficiency}
+      .button-container
+        // Edit & Delete Buttons
+        a.btn-edit(href=`/skill/update/${skill._id}`) Edit
+        a.btn-delete(href=`/skill/delete/${skill._id}`, onclick="return confirm('Are you sure?')") Delete

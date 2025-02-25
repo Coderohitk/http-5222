@@ -1,0 +1,22 @@
+extends ../common/layout
+
+block layout-content
+  .main-content
+    h1.page-title My Projects
+    
+    // Add Project Button
+    a.btn(href="/project/add") Add Project
+
+    each project in projects
+      .project-item
+        h2= project.name
+        p= project.description
+        p 
+          strong Technologies: 
+          |  #{project.technology.join(', ')}
+        p 
+          strong Link: 
+          a(href=project.link, target="_blank")= project.link
+      .button-container
+        a.btn-edit(href=`/project/update/${project._id}`) Edit
+        a.btn-delete(href=`/project/delete/${project._id}`, onclick="return confirm('Are you sure?')") Delete

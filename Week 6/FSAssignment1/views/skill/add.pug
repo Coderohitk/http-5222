@@ -1,0 +1,25 @@
+extends ../common/layout
+
+block layout-content
+  .main-content
+    h1.page-title Add a New Skill
+
+    form(action="/skill/add", method="POST")
+      .form-group
+        label(for="name") Skill Name:
+        input(type="text", name="name", id="name", required)
+
+      .form-group
+        label(for="category") Category:
+        input(type="text", name="category", id="category", required)
+
+      .form-group
+        label(for="proficiency") Proficiency:
+        select(name="proficiency", id="proficiency", required)
+          option(value="Beginner") Beginner
+          option(value="Intermediate") Intermediate
+          option(value="Advanced") Advanced
+
+      button(type="submit") Add Skill
+
+    a(href="/skill/list") Go back to skills list
